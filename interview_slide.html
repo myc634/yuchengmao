@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yucheng Mao - PhD Interview</title>
+    <link rel="shortcut icon" href="images/doudou.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Crimson+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: 'Crimson Pro', Georgia, serif;
+            background: #faf9f7;
+            color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide {
+            width: 100%;
+            max-width: 1100px;
+            padding: 40px 60px;
+        }
+
+        /* Name */
+        .name {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 4rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            border-bottom: 3px solid #c9a959;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            margin-bottom: 35px;
+        }
+
+        /* Main grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            gap: 45px;
+        }
+
+        .left-col, .right-col {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* Section styling */
+        .section {
+            position: relative;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #c9a959;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+
+        /* Contact */
+        .contact-list {
+            list-style: none;
+        }
+
+        .contact-list li {
+            padding: 5px 0;
+            font-size: 0.95rem;
+            color: #333;
+        }
+
+        .contact-list a {
+            color: #2c5282;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .contact-list a:hover {
+            border-bottom-color: #2c5282;
+        }
+
+        /* Education */
+        .edu-item {
+            margin-bottom: 12px;
+            padding-left: 12px;
+            border-left: 2px solid #e8e4dc;
+        }
+
+        .edu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-school {
+            font-weight: 500;
+            color: #1a1a1a;
+            font-size: 0.95rem;
+        }
+
+        .edu-detail {
+            font-size: 0.88rem;
+            color: #666;
+        }
+
+        .edu-date {
+            font-size: 0.82rem;
+            color: #999;
+        }
+
+        /* Research */
+        .advisor-item {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .advisor-name {
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+
+        .advisor-aff {
+            color: #888;
+            font-size: 0.88rem;
+        }
+
+        /* Papers section */
+        .papers-section {
+            background: linear-gradient(135deg, #f5f3ef 0%, #ebe8e2 100%);
+            padding: 20px 24px;
+            border-radius: 8px;
+            border-left: 4px solid #c9a959;
+        }
+
+        .paper-item {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #ddd8ce;
+            align-items: start;
+        }
+
+        .paper-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .paper-img {
+            width: 100px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        .paper-content {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .paper-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.02rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            line-height: 1.35;
+        }
+
+        .paper-venue {
+            display: inline-block;
+            background: #c9a959;
+            color: white;
+            font-size: 0.68rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 3px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            width: fit-content;
+        }
+
+        .paper-authors {
+            font-size: 0.82rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .paper-authors strong {
+            color: #2c5282;
+            font-weight: 600;
+        }
+
+        .paper-desc {
+            font-size: 0.78rem;
+            color: #888;
+            font-style: italic;
+        }
+
+        /* Badge */
+        .badge {
+            position: fixed;
+            top: 24px;
+            right: 30px;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #666;
+            letter-spacing: 1px;
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .slide {
+                padding: 30px;
+            }
+            .name {
+                font-size: 2.6rem;
+            }
+            .main-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="badge">UCSD CogSci · PhD Interview</div>
+
+    <div class="slide">
+        <h1 class="name">Yucheng Mao</h1>
+        <p class="tagline">Computer Vision · Generative Models · Artificial Intelligence</p>
+
+        <div class="main-grid">
+            <div class="left-col">
+                <!-- Contact -->
+                <div class="section">
+                    <h2 class="section-title">Contact</h2>
+                    <ul class="contact-list">
+                        <li><a href="mailto:yucheng.mao.cs@gmail.com">yucheng.mao.cs@gmail.com</a></li>
+                        <li><a href="https://myc634.github.io">myc634.github.io</a></li>
+                    </ul>
+                </div>
+
+                <!-- Education -->
+                <div class="section">
+                    <h2 class="section-title">Education</h2>
+                    <div class="edu-item">
+                        <div class="edu-school">UC San Diego</div>
+                        <div class="edu-detail">M.S. Computer Science</div>
+                        <div class="edu-detail">Advisor: Prof. Zhuowen Tu</div>
+                        <div class="edu-date">2025 – Present</div>
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-school">Univ. of Science & Technology Beijing</div>
+                        <div class="edu-detail">B.S. in Applied Mathematics</div>
+                        <div class="edu-date">2020 – 2024</div>
+                    </div>
+                </div>
+
+                <!-- Research Experience -->
+                <div class="section">
+                    <h2 class="section-title">Research Advisors</h2>
+                    <div class="advisor-item">
+                        <span class="advisor-name">Prof. Zhuowen Tu</span>
+                        <span class="advisor-aff">· UCSD</span>
+                    </div>
+                    <div class="advisor-item">
+                        <span class="advisor-name">Prof. Jeong Joon Park</span>
+                        <span class="advisor-aff">· UMich</span>
+                    </div>
+                    <div class="advisor-item">
+                        <span class="advisor-name">Shanghai AI Lab</span>
+                        <span class="advisor-aff">· Research Intern</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-col">
+                <!-- Selected Publications -->
+                <div class="section papers-section">
+                    <h2 class="section-title">Selected Publications</h2>
+                    
+                    <div class="paper-item">
+                        <img src="images/anysplat.png" alt="AnySplat" class="paper-img">
+                        <div class="paper-content">
+                            <div class="paper-venue">SIGGRAPH Asia 2025</div>
+                            <div class="paper-title">AnySplat: Feed-forward 3D Gaussian Splatting from Unconstrained Views</div>
+                            <div class="paper-authors"><strong>Yucheng Mao*</strong>, Lihan Jiang*, Linning Xu, Tao Lu, et al.</div>
+                            <div class="paper-desc">3D Gaussian Splatting from unconstrained views within seconds</div>
+                        </div>
+                    </div>
+
+                    <div class="paper-item">
+                        <img src="images/sirdiff.png" alt="SIRDiff" class="paper-img">
+                        <div class="paper-content">
+                            <div class="paper-venue">CVPR 2025</div>
+                            <div class="paper-title">Sparse Image Sets Restoration with Multi-View Diffusion Model</div>
+                            <div class="paper-authors"><strong>Yucheng Mao*</strong>, Boyang Wang*, Nilesh Kulkarni, Jeong Joon Park</div>
+                            <div class="paper-desc">3D reconstruction from degraded multi-view observations</div>
+                        </div>
+                    </div>
+
+                    <div class="paper-item">
+                        <img src="images/robovip.jpg" alt="RoboVIP" class="paper-img">
+                        <div class="paper-content">
+                            <div class="paper-venue">CVPR 2026 Submission</div>
+                            <div class="paper-title">RoboVIP: Multi-View Video Generation with Visual Identity Prompting Augments Robot Manipulation</div>
+                            <div class="paper-authors">Boyang Wang*, Haoran Zhang*, ..., <strong>Yucheng Mao</strong>, ..., Jiangmiao Pang</div>
+                            <div class="paper-desc">Video generation for embodied AI and robot learning</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
